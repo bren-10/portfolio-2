@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 html,
 body {
   padding: 0;
   margin: 0;
-  background-image: url('/rafael-de-nadai.jpg');
+  /* background-image: url('/cat-han.jpg'); */
+  /* background-image: url('/peter-gargiulo.jpg'); */
+  background-image: url('/hao-wang.jpg');
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -10,6 +14,7 @@ body {
   background-attachment: fixed;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Press Start 2P', cursive;
 }
 
 a {
