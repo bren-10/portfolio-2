@@ -19,12 +19,12 @@ export default function Home() {
         <h2>&#62; BRENDAN STANDER</h2>
         <h2>&#62; my clich&#233; portfolio website</h2>
         <h2>&#62;</h2>
-        <div className={styles.linkList}>
-          <h2 className={styles.mainLink}>&#62; <Link href={'/portfolio'}><span>view portfolio<span className={styles.blinkLink}>_</span></span></Link></h2>
-          <h2 className={styles.mainLink}>&#62; <Link href={'/about-me'}><span>about me<span className={styles.blinkLink}>_</span></span></Link></h2>
-          <h2 className={styles.mainLink}>&#62; <Link href={'/tangents'}><span>tangents<span className={styles.blinkLink}>_</span></span></Link></h2>
-          <h2 className={styles.mainLink}>&#62; <Link href={'/contact-me'}><span>contact me<span className={styles.blinkLink}>_</span></span></Link></h2>
-          <h2>&#62; <span className={styles.blinker}>_</span></h2>
+        <div className='link-area'>
+          <h2 className='main-link'>&#62; <Link href={'/portfolio'}><span>view portfolio<span className='blink-link'>_</span></span></Link></h2>
+          <h2 className='main-link'>&#62; <Link href={'/about-me'}><span>about me<span className='blink-link'>_</span></span></Link></h2>
+          <h2 className='main-link'>&#62; <Link href={'/tangents'}><span>tangents<span className='blink-link'>_</span></span></Link></h2>
+          <h2 className='main-link'>&#62; <Link href={'/contact-me'}><span>contact me<span className='blink-link'>_</span></span></Link></h2>
+          <h2>&#62; <span className='blinker'>_</span></h2>
         </div>
       </div>
     </div>
