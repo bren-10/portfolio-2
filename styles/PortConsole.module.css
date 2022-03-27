@@ -1,8 +1,3 @@
-.about {
-  padding: 1.5rem;
-  color: rgb(218, 218, 218);
-}
-
 .console {
   font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif !important;
   margin-top: 4rem;
@@ -20,8 +15,9 @@
   background-color: #555;
   height: 45px;
   line-height: 45px;
-  text-align: center;
+  text-align: left;
   color: #DDD;
+  padding-left: 1rem;
 }
 
 .console .consoleBody {
@@ -37,14 +33,4 @@
 
 .console .consoleBody p {
   line-height: 1.5rem;
-}
-
-.unLink {
-  text-decoration: none;
-  color: unset;
-}
-
-.unLink:hover {
-  cursor: pointer;
-  color: white;
 }
