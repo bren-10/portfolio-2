@@ -4,6 +4,7 @@
       "name": "This Website",
       "description": "My second portfolio website. Not 100% satisfied yet, will be working on it as time goes.",
       "source": "/",
+      "sourceCode": "https://github.com/bren-10/portfolio-2",
       "imgSource": "/portfolio/1.png",
       "tools": ["html", "css", "bootstrap", "js", "react", "next", "mongo", "vercel"]
     },
@@ -11,6 +12,7 @@
       "name": "Old portfolio Website",
       "description": "My first portfolio website which got me my first job. Please allow a few seconds for Heroku to wake up on load.",
       "source": "https://bren-10.herokuapp.com/",
+      "sourceCode": "https://github.com/Bren1209/self-made-portfolio",
       "imgSource": "/portfolio/2.png",
       "tools": ["html", "css", "bootstrap", "js", "express", "mailchimp", "heroku"]
     },
@@ -18,28 +20,32 @@
       "name": "Kush Cultivation",
       "description": "An E-commerce website built for a friend. Entire website built from scratch (Ozow Payment Portal in progress). Includes its own administrative dashboard for adding/editing/deleting items from the shop. Please note I do not condone (nor do I NOT condone) the use of marijuana and related products.",
       "source": "https://kush-cultivation-next.vercel.app/",
+      "sourceCode": "https://github.com/bren-10/kush-cultivation-next",
       "imgSource": "/portfolio/3.png",
       "tools": ["html", "css", "js", "bootstrap", "react", "next", "mongo", "vercel"]
     },
     {
-      "name": "Good Thymes Catering",
+      "name": "Good Thymes Catering (old)",
       "description": "A relatively-static website with a contact form, built for my mom's friend's business. Please allow a few seconds for Heroku to wake up on load.",
       "source": "http://www.good-thymes-catering.co.za/",
+      "sourceCode": "https://github.com/Bren1209/good-thymes-website",
       "imgSource": "/portfolio/4.png",
       "tools": ["html", "css", "js", "bootstrap", "mailchimp", "heroku"]
     },
     {
-      "name": "DeckStar G",
+      "name": "DeckStar G (old)",
       "description": "A static website built for a friend's YouTube channel (not in use). Please allow a few seconds for Heroku to wake up on load.",
       "source": "http://deckstarg.herokuapp.com/",
+      "sourceCode": "https://github.com/Bren1209/deckstarg-website",
       "imgSource": "/portfolio/5.png",
       "tools": ["html", "css", "js", "bootstrap", "heroku"]
     },
     {
-      "name": "Family-shared shopping list",
+      "name": "Family-shared shopping list (old)",
       "description": "Back when I was getting to know MongoDB, I built a shopping list to share between my family.",
       "source": "http://arbshoppinglist.herokuapp.com/",
-      "imgSource": "/portfolio/5.png",
+      "sourceCode": "https://github.com/Bren1209/Family-Shopping-List",
+      "imgSource": "/portfolio/6.png",
       "tools": ["html", "css", "js", "bootstrap", "mongo", "heroku"]
     }
   ]

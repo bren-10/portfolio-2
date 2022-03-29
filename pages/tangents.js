@@ -5,6 +5,7 @@ export default function tangents() {
   return (
     <div className={styles.tangents}>
       <h3>&#62; TANGENTS</h3>
+      <h3>&#62; ========</h3>
       <h3>&#62; for the sake of having a backend</h3>
       <h3>&#62;</h3>
       <div className="link-area">

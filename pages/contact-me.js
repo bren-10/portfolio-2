@@ -5,7 +5,8 @@ export default function contactMe() {
   return (
     <div className={styles.contact}>
       <h3>&#62; CONTACT ME</h3>
-      <h3>&#62; form still to come</h3>
+      <h3>&#62; ===============</h3>
+      <h3>&#62; form still to come. maybe</h3>
       <h3>&#62;</h3>
       <div className="link-area">
         <h3 className='main-link'>&#62; <a href='mailto:info@bren-10.co.za'><span>email<span className='blink-link'>_</span></span></a></h3>

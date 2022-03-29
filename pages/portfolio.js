@@ -1,6 +1,6 @@
 import styles from "../styles/Portfolio.module.css";
 import Link from "next/link";
-import PortConsole from "../components/PortConsole";
+import PortfolioCard from "../components/PortfolioCard";
 import portfolioData from '../portfolioData.json'
 
 export default function portfolio() {
@@ -9,6 +9,7 @@ export default function portfolio() {
     <div className={styles.portfolio}>
       
       <h3>&#62; PORTFOLIO</h3>
+      <h3>&#62; =========</h3>
       <h3>&#62; some of my projects</h3>
       <h3>&#62;</h3>
       <div className="link-area">
@@ -25,11 +26,11 @@ export default function portfolio() {
         </h3>
       </div>
 
-      <div className="row">
+      <div className="row mt-5">
         {data.map((item,i)=> (
-          <div className="col-lg" key={i}>
-            <PortConsole 
-              num={i}
+          <div className="col-lg-4 mb-4" key={i}>
+            <PortfolioCard 
+              num={i+1}
               name={item.name}
               description={item.description}
               source={item.source}

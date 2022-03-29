@@ -5,6 +5,7 @@ export default function aboutMe() {
   return (
     <div className={styles.about}>
       <h3>&#62; ABOUT ME</h3>
+      <h3>&#62; ========</h3>
       <h3>&#62; basic information about me</h3>
       <h3>&#62;</h3>
       <div className="link-area">
