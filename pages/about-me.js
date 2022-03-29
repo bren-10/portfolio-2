@@ -10,7 +10,7 @@ export default function aboutMe() {
       <div className="link-area">
         <h3 className="main-link">
           &#62;{" "}
-          <a className={styles.unLink} href={"/cv.pdf"} target="_blank">
+          <a className={styles.unLink} href={"/cv.pdf"} target="_blank" rel="noreferrer">
             <span>
               view CV<span className="blink-link">_</span>
             </span>
@@ -18,7 +18,7 @@ export default function aboutMe() {
         </h3>
         <h3 className="main-link">
           &#62;{" "}
-          <Link href={"/"}>
+          <Link passHref href={"/"}>
             <span>
               back<span className="blink-link">_</span>
             </span>
@@ -66,12 +66,12 @@ export default function aboutMe() {
             been working as one since October 2020.
           </p>
           <p>
-            I've learnt a substantial amount since I dove into coding in
+            I&quot;ve learnt a substantial amount since I dove into coding in
             November 2019 and it will forever be my passion.
           </p>
           <p>Some of my familiar languages &  frameworks include:</p>
           <p>Python<br></br>Javascript<br></br>React<br></br>NextJS<br></br>Django<br></br>ExpressJS</p>
-          <p>I also play guitar and drums, for what that's worth<span className="blinker">_</span></p>
+          <p>I also play guitar and drums, for what that&quot;s worth<span className="blinker">_</span></p>
         </div>
       </div>
     </div>

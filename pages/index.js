@@ -18,12 +18,12 @@ export default function Home() {
       <div className={styles.home}>
         {/* Are <li> list items outdated? Gonna give it a pass for now.*/}
         <h3>&#62; BRENDAN STANDER</h3>
-        <h3>&#62; my clich&#233; portfolio website</h3>
+        <h3>&#62; my clich&#233;-looking portfolio website</h3>
         <h3>&#62;</h3>
         <div className="link-area">
           <h3 className="main-link">
             &#62;{" "}
-            <Link href={"/portfolio"}>
+            <Link passHref href={"/portfolio"}>
               <span>
                 view portfolio<span className="blink-link">_</span>
               </span>
@@ -31,7 +31,7 @@ export default function Home() {
           </h3>
           <h3 className="main-link">
             &#62;{" "}
-            <Link href={"/about-me"}>
+            <Link passHref href={"/about-me"}>
               <span>
                 about me<span className="blink-link">_</span>
               </span>
@@ -39,7 +39,7 @@ export default function Home() {
           </h3>
           <h3 className="main-link">
             &#62;{" "}
-            <Link href={"/tangents"}>
+            <Link passHref href={"/tangents"}>
               <span>
                 tangents<span className="blink-link">_</span>
               </span>
@@ -47,7 +47,7 @@ export default function Home() {
           </h3>
           <h3 className="main-link">
             &#62;{" "}
-            <Link href={"/contact-me"}>
+            <Link passHref href={"/contact-me"}>
               <span>
                 contact me<span className="blink-link">_</span>
               </span>

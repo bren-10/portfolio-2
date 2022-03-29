@@ -1,11 +1,10 @@
-import { useRouter } from "next/router";
 import styles from "../styles/Portfolio.module.css";
 import Link from "next/link";
 import PortConsole from "../components/PortConsole";
+import portfolioData from '../portfolioData.json'
 
 export default function portfolio() {
-  const router = useRouter();
-
+  const data = portfolioData.portfolioData
   return (
     <div className={styles.portfolio}>
       
@@ -15,7 +14,7 @@ export default function portfolio() {
       <div className="link-area">
         <h3 className="main-link">
           &#62;{" "}
-          <Link href={"/"}>
+          <Link passHref href={"/"}>
             <span>
               back<span className="blink-link">_</span>
             </span>
@@ -27,15 +26,18 @@ export default function portfolio() {
       </div>
 
       <div className="row">
-        <div className="col-lg-4">
-          <PortConsole/>
-        </div>
-        <div className="col-lg-4">
-          <PortConsole/>
-        </div>
-        <div className="col-lg-4">
-          <PortConsole/>
-        </div>
+        {data.map((item,i)=> (
+          <div className="col-lg" key={i}>
+            <PortConsole 
+              num={i}
+              name={item.name}
+              description={item.description}
+              source={item.source}
+              imgSource={item.imgSource}
+              tools={item.tools}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
