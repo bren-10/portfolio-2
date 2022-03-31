@@ -9,6 +9,7 @@ export default function Home() {
   const [displayError, setDisplayError] = useState(false)
   const router = useRouter()
   const inputRef = useRef()
+  
   // Source: https://stackoverflow.com/questions/37440408/how-to-detect-esc-key-press-in-react-and-how-to-handle-it
   // With added functionality
   // Decided to go the route of window keystore detection instead of <input/> because of fancy blinker cursor not working well

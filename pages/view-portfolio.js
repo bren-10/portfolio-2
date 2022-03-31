@@ -2,9 +2,85 @@ import styles from "../styles/Portfolio.module.css";
 import Link from "next/link";
 import PortfolioCard from "../components/PortfolioCard";
 import portfolioData from '../portfolioData.json'
+import { useCallback, useRef, useState, useEffect } from "react";
+import { useRouter } from "next/dist/client/router";
 
 export default function portfolio() {
   const data = portfolioData.portfolioData
+  const [terminalInput, setTerminalInput] = useState('')
+  const [displayError, setDisplayError] = useState(false)
+  const [projectsType, setProjectsType] = useState('personal')
+  const router = useRouter()
+  const inputRef = useRef()
+  
+  // Source: https://stackoverflow.com/questions/37440408/how-to-detect-esc-key-press-in-react-and-how-to-handle-it
+  // With added functionality
+  // Decided to go the route of window keystore detection instead of <input/> because of fancy blinker cursor not working well
+  // with the input field.
+  const keystrokeDetection = useCallback((event) => {
+    const key = event.key
+    const ignoreList = ['Shift', 'Control', 'Alt', 'Escape', 'Tab', 'Home', 'Delete', 'End', 'Meta']
+
+    function handleInput() {
+      if (!ignoreList.includes(key)) {
+        setTerminalInput(prev => prev.concat(key))
+      }
+    }
+
+    function handleSubmission() {
+      setDisplayError(false)
+      const input = inputRef.current
+      if (input === 'back') {
+        router.back()
+      } else if (input.includes('personal')) {
+        setProjectsType('personal')
+      } else if (input.includes('work')) {
+        setProjectsType('work')
+      } else {
+        setDisplayError(true)
+      }
+    }
+
+    switch (key) {
+      case 'Enter':
+        handleSubmission()
+        break
+      case 'Backspace':
+        setTerminalInput(prev => prev.slice(0, -1))
+        break
+      case 'Space':
+        event.preventDefault() // * here
+        setTerminalInput(prev => prev.concat(' '))
+        break
+      default:
+        handleInput()
+    }
+  }, []);
+
+  function switchProjects() {
+    if (projectsType === 'personal') {
+      setProjectsType('work')
+      return
+    }
+    setProjectsType('personal')
+    return
+  }
+
+  useEffect(() => {
+    document.addEventListener("keydown", keystrokeDetection, false);
+
+    return () => {
+      document.removeEventListener("keydown", keystrokeDetection, false);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (displayError && !terminalInput){
+      setDisplayError(false)
+    }
+    inputRef.current = terminalInput
+  }, [terminalInput])
+
   return (
     <div className={styles.portfolio}>
       
@@ -21,8 +97,16 @@ export default function portfolio() {
             </span>
           </Link>
         </h3>
+        <h3 onClick={switchProjects} className="main-link">
+          &#62; {projectsType === 'personal' ? 'work' : 'personal'} projects<span className="blink-link">_</span>
+        </h3>
+        {displayError &&
+          <h3>
+            &#62; <span className="error-msg">ERR: UNKNOWN COMMAND</span>
+          </h3>
+        }
         <h3>
-          &#62; <span className="blinker">_</span>
+          &#62; {terminalInput}<span className="blinker">_</span>
         </h3>
       </div>
 
