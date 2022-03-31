@@ -1,16 +1,30 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useCallback, useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { useCallback, useEffect, useState, useReducer, useRef } from "react";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
   const [terminalInput, setTerminalInput] = useState('')
-
+  const [displayError, setDisplayError] = useState(false)
+  const router = useRouter()
+  const inputRef = useRef()
   // Source: https://stackoverflow.com/questions/37440408/how-to-detect-esc-key-press-in-react-and-how-to-handle-it
   // With added functionality
+  // Decided to go the route of window keystore detection instead of <input/> because of fancy blinker cursor not working well
+  // with the input field.
   const keystrokeDetection = useCallback((event) => {
     const key = event.key
     const ignoreList = ['Shift', 'Control', 'Alt', 'Escape', 'Tab', 'Home', 'Delete', 'End', 'Meta']
+    const pageReference = {
+      "view portfolio": "view-portfolio",
+      "portfolio": "view-portfolio",
+      "about me": "about-me",
+      "about": "about-me",
+      "tangents": "tangents",
+      "contact me": "contact-me",
+      "contact": "contact-me"
+    }
 
     function handleInput() {
       if (!ignoreList.includes(key)) {
@@ -19,7 +33,15 @@ export default function Home() {
     }
 
     function handleSubmission() {
-      
+      setDisplayError(false)
+      const input = inputRef.current
+      if (input === 'back') {
+        router.back()
+      } else if (input in pageReference) {
+        router.push(pageReference[input])
+      } else {
+        setDisplayError(true)
+      }
     }
 
     switch (key) {
@@ -44,6 +66,14 @@ export default function Home() {
       document.removeEventListener("keydown", keystrokeDetection, false);
     };
   }, []);
+
+  useEffect(() => {
+    if (displayError && !terminalInput){
+      setDisplayError(false)
+    }
+    inputRef.current = terminalInput
+  }, [terminalInput])
+  
   
   return (
     <div>
@@ -65,7 +95,7 @@ export default function Home() {
         <div className="link-area">
           <h3 className="main-link">
             &#62;{" "}
-            <Link passHref href={"/portfolio"}>
+            <Link passHref href={"/view-portfolio"}>
               <span>
                 view portfolio<span className="blink-link">_</span>
               </span>
@@ -95,6 +125,11 @@ export default function Home() {
               </span>
             </Link>
           </h3>
+          {displayError &&
+            <h3>
+              &#62; <span className="error-msg">ERR: UNKNOWN COMMAND</span>
+            </h3>
+          }
           <h3>
             &#62; {terminalInput}<span className="blinker">_</span>
           </h3>
