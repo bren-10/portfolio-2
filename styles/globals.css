@@ -31,8 +31,9 @@ a {
   box-sizing: border-box;
 }
 
-.terminal-input {
-  all: unset;
+.error-msg {
+  color: #f0fff8; 
+  text-shadow: 0 0 3px #f89595, 0 0 10px #fc6767, 0 0 20px #ff3636, 0 0 30px #ff0000;
 }
 
 .blinker {

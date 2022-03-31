@@ -9,14 +9,15 @@ export default function Home() {
   const [displayError, setDisplayError] = useState(false)
   const router = useRouter()
   const inputRef = useRef()
-  
+
   // Source: https://stackoverflow.com/questions/37440408/how-to-detect-esc-key-press-in-react-and-how-to-handle-it
   // With added functionality
   // Decided to go the route of window keystore detection instead of <input/> because of fancy blinker cursor not working well
   // with the input field.
   const keystrokeDetection = useCallback((event) => {
+    event.preventDefault()
     const key = event.key
-    const ignoreList = ['Shift', 'Control', 'Alt', 'Escape', 'Tab', 'Home', 'Delete', 'End', 'Meta']
+    const ignoreList = ['Shift', 'Control', 'Alt', 'Escape', 'Tab', 'Home', 'Delete', 'End', 'Meta', 'CapsLock']
     const pageReference = {
       "view portfolio": "view-portfolio",
       "portfolio": "view-portfolio",
@@ -35,7 +36,7 @@ export default function Home() {
 
     function handleSubmission() {
       setDisplayError(false)
-      const input = inputRef.current
+      const input = inputRef.current.toLowerCase()
       if (input === 'back') {
         router.back()
       } else if (input in pageReference) {
@@ -45,6 +46,7 @@ export default function Home() {
       }
     }
 
+    // For the sake of speed-typers, I'd rather do switch/case
     switch (key) {
       case 'Enter':
         handleSubmission()
@@ -91,7 +93,8 @@ export default function Home() {
         {/* Are <li> list items outdated? Gonna give it a pass for now.*/}
         <h3>&#62; BRENDAN STANDER</h3>
         <h3>&#62; ===============</h3>
-        <h3>&#62; my clich&#233;-looking portfolio website</h3>
+        {/* <h3>&#62; my clich&#233;-looking portfolio website</h3> */}
+        <h3>&#62; my stereotypical portfolio website</h3>
         <h3>&#62;</h3>
         <div className="link-area">
           <h3 className="main-link">

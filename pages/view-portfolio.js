@@ -18,8 +18,9 @@ export default function portfolio() {
   // Decided to go the route of window keystore detection instead of <input/> because of fancy blinker cursor not working well
   // with the input field.
   const keystrokeDetection = useCallback((event) => {
+    event.preventDefault()
     const key = event.key
-    const ignoreList = ['Shift', 'Control', 'Alt', 'Escape', 'Tab', 'Home', 'Delete', 'End', 'Meta']
+    const ignoreList = ['Shift', 'Control', 'Alt', 'Escape', 'Tab', 'Home', 'Delete', 'End', 'Meta', 'CapsLock']
 
     function handleInput() {
       if (!ignoreList.includes(key)) {
@@ -29,7 +30,7 @@ export default function portfolio() {
 
     function handleSubmission() {
       setDisplayError(false)
-      const input = inputRef.current
+      const input = inputRef.current.toLowerCase()
       if (input === 'back') {
         router.back()
       } else if (input.includes('personal')) {
@@ -41,6 +42,7 @@ export default function portfolio() {
       }
     }
 
+    // For the sake of speed-typers, I'd rather do switch/case
     switch (key) {
       case 'Enter':
         handleSubmission()
@@ -49,7 +51,6 @@ export default function portfolio() {
         setTerminalInput(prev => prev.slice(0, -1))
         break
       case 'Space':
-        event.preventDefault() // * here
         setTerminalInput(prev => prev.concat(' '))
         break
       default:
