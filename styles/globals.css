@@ -31,6 +31,10 @@ a {
   box-sizing: border-box;
 }
 
+.terminal-input {
+  all: unset;
+}
+
 .blinker {
   font-weight: 100;
   /* font-size: 30px; */

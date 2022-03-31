@@ -2,40 +2,13 @@
   padding: 1.5rem;
 }
 
-.console {
+.aboutMeContainer {
+  padding: 1.5rem;
+  margin-top: 3rem;
+  border: 1px solid #66fab5; 
+  box-shadow: 0 0 1px #80ffc0, 0 0 3px #00ff66, 0 0 7px #00ff66, 0 0 10px #00ff66, inset 0 0 10px #00ff66;
+  text-shadow: 0 0 1px #80ffc0, 0 0 2px #00ff66, 0 0 5px #00ff66, 0 0 7px #00ff66;
   font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif !important;
-  margin-top: 4rem;
-  background-color: rgba(0, 0, 0, 0.938);
-  /* font-family: 'Fira Mono'; */
-  width: 100%;
-  box-sizing: border-box;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-}
-
-.console header {
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  background-color: #555;
-  height: 45px;
-  line-height: 45px;
-  text-align: center;
-  color: #DDD;
-}
-
-.console .consoleBody {
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-  box-sizing: border-box;
-  padding: 0.6rem;
-  height: calc(100% - 40px);
-  /* overflow: scroll; */
-  background-color: #000;
-  color: #ffffff;
-}
-
-.console .consoleBody p {
-  line-height: 1.5rem;
 }
 
 .unLink {

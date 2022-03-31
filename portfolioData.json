@@ -2,7 +2,7 @@
   "portfolioData": [
     {
       "name": "This Website",
-      "description": "My second portfolio website. Not 100% satisfied yet, will be working on it as time goes.",
+      "description": "My second portfolio website (the one you're reading this on). I built this using most of the things I've learnt since building my first portfolio website in 2020.",
       "source": "/",
       "sourceCode": "https://github.com/bren-10/portfolio-2",
       "imgSource": "/portfolio/1.png",
@@ -18,7 +18,7 @@
     },
     {
       "name": "Kush Cultivation",
-      "description": "An E-commerce website built for a friend. Entire website built from scratch (Ozow Payment Portal in progress). Includes its own administrative dashboard for adding/editing/deleting items from the shop. Please note I do not condone (nor do I NOT condone) the use of marijuana and related products.",
+      "description": "An E-commerce website built for a friend. Entire website built from scratch (Ozow Payment Portal will be added soon). Includes its own administrative dashboard for adding/editing/deleting items from the shop. Please note I do not condone (nor do I NOT condone) the use of marijuana and related products.",
       "source": "https://kush-cultivation-next.vercel.app/",
       "sourceCode": "https://github.com/bren-10/kush-cultivation-next",
       "imgSource": "/portfolio/3.png",

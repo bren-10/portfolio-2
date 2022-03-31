@@ -37,8 +37,8 @@ export default function PortfolioCard(props) {
       <h4>{props.name}</h4>
       <hr/>
       {props.tools &&
-        props.tools.map((tool) => (
-          <span className="mx-1">{iconRef[tool]}</span>
+        props.tools.map((tool, i) => (
+          <span key={i} className="mx-1">{iconRef[tool]}</span>
         ))}
       <p className="mt-2">{props.description}</p>
       <a target="_blank" href={props.sourceCode} rel="noreferrer" className={styles.viewCode}>Source Code</a>

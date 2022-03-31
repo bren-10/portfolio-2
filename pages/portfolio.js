@@ -34,6 +34,7 @@ export default function portfolio() {
               name={item.name}
               description={item.description}
               source={item.source}
+              sourceCode={item.sourceCode}
               imgSource={item.imgSource}
               tools={item.tools}
             />

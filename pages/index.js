@@ -1,9 +1,50 @@
 import Head from "next/head";
 import Link from "next/link";
-import Script from "next/script";
+import { useCallback, useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
+  const [terminalInput, setTerminalInput] = useState('')
+
+  // Source: https://stackoverflow.com/questions/37440408/how-to-detect-esc-key-press-in-react-and-how-to-handle-it
+  // With added functionality
+  const keystrokeDetection = useCallback((event) => {
+    const key = event.key
+    const ignoreList = ['Shift', 'Control', 'Alt', 'Escape', 'Tab', 'Home', 'Delete', 'End', 'Meta']
+
+    function handleInput() {
+      if (!ignoreList.includes(key)) {
+        setTerminalInput(prev => prev.concat(key))
+      }
+    }
+
+    function handleSubmission() {
+      
+    }
+
+    switch (key) {
+      case 'Enter':
+        handleSubmission()
+        break
+      case 'Backspace':
+        setTerminalInput(prev => prev.slice(0, -1))
+        break
+      case 'Space':
+        setTerminalInput(prev => prev.concat(' '))
+        break
+      default:
+        handleInput()
+    }
+  }, []);
+
+  useEffect(() => {
+    document.addEventListener("keydown", keystrokeDetection, false);
+
+    return () => {
+      document.removeEventListener("keydown", keystrokeDetection, false);
+    };
+  }, []);
+  
   return (
     <div>
       <Head>
@@ -55,24 +96,10 @@ export default function Home() {
             </Link>
           </h3>
           <h3>
-            &#62; <span className="blinker">_</span>
+            &#62; {terminalInput}<span className="blinker">_</span>
           </h3>
         </div>
       </div>
-      <Script
-        src="https://unpkg.com/react/umd/react.production.min.js"
-        crossOrigin="true"
-      ></Script>
-
-      <Script
-        src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"
-        crossOrigin="true"
-      ></Script>
-
-      <Script
-        src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js"
-        crossOrigin="true"
-      ></Script>
     </div>
   );
 }
