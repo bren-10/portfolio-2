@@ -121,3 +121,17 @@ a:hover {
     text-shadow: none;
   }
 }
+
+@media (max-width: 950px) {
+  h3 {
+    font-size: 0.8rem;
+  }
+
+  p {
+    font-size: 0.7rem;
+  }
+
+  .hide-mobile {
+    display: none;
+  }
+}

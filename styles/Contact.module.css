@@ -1,3 +1,10 @@
 .contact {
   padding: 1.5rem;
 }
+
+@media (max-width: 950px) {
+  .contact {
+    margin-top: 1rem;
+    padding: 0.8rem;
+  }
+}

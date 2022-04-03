@@ -216,12 +216,10 @@ export default function portfolio() {
             url="/portfolio/res.webm"
             playing
             controls
-            width={"80%"}
-            style={{ margin: "2rem auto" }}
-            height={"600px"}
+            className={styles.player}
           />
           <hr className={styles.workHr} />
-          <div style={{ width: "80%", margin: "0 auto" }}>
+          <div className={styles.gallery}>
             <ImageGallery items={workImages} />
           </div>
         </div>

@@ -1,3 +1,11 @@
 .tangents {
   padding: 1.5rem;
 }
+
+@media (max-width: 950px) {
+  .tangents {
+    margin-top: 1rem;
+    padding: 0.8rem;
+  }
+
+}

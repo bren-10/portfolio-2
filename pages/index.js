@@ -109,7 +109,7 @@ export default function Home() {
         <h3>&#62; BRENDAN STANDER</h3>
         <h3>&#62; ===============</h3>
         {/* <h3>&#62; my clich&#233;-looking portfolio website</h3> */}
-        <h3>&#62; my stereotypical portfolio website</h3>
+        <h3>&#62; my <span className="hide-mobile">stereotypical</span> portfolio website</h3>
         <h3>&#62;</h3>
         <div className="link-area">
           <h3 className="main-link">

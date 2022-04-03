@@ -1,3 +1,12 @@
 .home {
   padding: 1.5rem;
 }
+
+@media (max-width: 950px) {
+
+  .home {
+    margin-top: 1rem;
+    padding: 0.8rem;
+  }
+  
+}

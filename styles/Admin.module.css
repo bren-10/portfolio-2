@@ -1,0 +1,11 @@
+.admin {
+  margin: 5rem auto;
+  text-align: center;
+}
+
+.admin input,
+.admin textarea {
+  display: block;
+  margin: 1rem auto;
+
+}

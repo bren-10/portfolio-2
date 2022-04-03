@@ -1,34 +1,20 @@
-.about {
-  padding: 1.5rem;
-}
-
-.aboutMeContainer {
-  padding: 1.5rem;
+.tangent {
   margin-top: 3rem;
+  padding: 1rem;
   border: 1px solid #66fab5; 
   box-shadow: 0 0 1px #80ffc0, 0 0 3px #00ff66, 0 0 7px #00ff66, 0 0 10px #00ff66, inset 0 0 10px #00ff66;
   text-shadow: 0 0 1px #80ffc0, 0 0 2px #00ff66, 0 0 5px #00ff66, 0 0 7px #00ff66;
   font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif !important;
-}
-
-.unLink {
-  text-decoration: none;
-  color: unset;
-}
-
-.unLink:hover {
-  cursor: pointer;
-  color: white;
+  height: 100%;
 }
 
 @media (max-width: 950px) {
-  .about {
-    margin-top: 1rem;
-    padding: 0.8rem;
+  .tangent h1 {
+    font-size: 1rem;
   }
 
-  .aboutMeContainer {
-    padding: 0.8rem;
+  .tangent {
     margin-top: 1rem;
+    padding: 0.7rem;
   }
 }
