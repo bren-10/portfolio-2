@@ -24,7 +24,7 @@ export default function Admin(props) {
     fetchOptions.body = JSON.stringify({
       "title": titleRef.current.value,
       "body": bodyRef.current.value,
-      "date": new Date().toLocaleString()
+      "date": new Date().toLocaleString('en-ZA')
     })
 
     if (titleRef.current.value && bodyRef.current.value) {
