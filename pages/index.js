@@ -17,7 +17,22 @@ export default function Home() {
   const keystrokeDetection = useCallback((event) => {
     event.preventDefault()
     const key = event.key
-    const ignoreList = ['Shift', 'Control', 'Alt', 'Escape', 'Tab', 'Home', 'Delete', 'End', 'Meta', 'CapsLock']
+    const ignoreList = [
+      "Shift",
+      "Control",
+      "Alt",
+      "Escape",
+      "Tab",
+      "Home",
+      "Delete",
+      "End",
+      "Meta",
+      "CapsLock",
+      "ArrowLeft",
+      "ArrowRight",
+      "ArrowUp",
+      "ArrowDown",
+    ]
     const pageReference = {
       "view portfolio": "view-portfolio",
       "portfolio": "view-portfolio",

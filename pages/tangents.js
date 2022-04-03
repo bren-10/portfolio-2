@@ -16,7 +16,22 @@ export default function tangents() {
   const keystrokeDetection = useCallback((event) => {
     event.preventDefault()
     const key = event.key
-    const ignoreList = ['Shift', 'Control', 'Alt', 'Escape', 'Tab', 'Home', 'Delete', 'End', 'Meta', 'CapsLock']
+    const ignoreList = [
+      "Shift",
+      "Control",
+      "Alt",
+      "Escape",
+      "Tab",
+      "Home",
+      "Delete",
+      "End",
+      "Meta",
+      "CapsLock",
+      "ArrowLeft",
+      "ArrowRight",
+      "ArrowUp",
+      "ArrowDown",
+    ]
 
     function handleInput() {
       if (!ignoreList.includes(key)) {
