@@ -8,12 +8,14 @@ function MyApp({ Component, pageProps }) {
   return (
     <div>
       <Head>
+        <title>Brendan Stander</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <link
           href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
           rel="stylesheet"
         />
+        <link rel="icon" href="/android-chrome-192x192.png" />
       </Head>
       <Component {...pageProps} />
       <Script
