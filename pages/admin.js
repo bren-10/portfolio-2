@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useRef, useState } from "react";
 import styles from '../styles/Admin.module.css'
 
-export default function admin(props) {
+export default function Admin(props) {
   const titleRef = useRef()
   const bodyRef = useRef()
   const router = useRouter()

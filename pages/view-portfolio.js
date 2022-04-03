@@ -7,7 +7,7 @@ import { useRouter } from "next/dist/client/router";
 import ImageGallery from "react-image-gallery";
 import ReactPlayer from "react-player";
 
-export default function portfolio() {
+export default function Portfolio() {
   const data = portfolioData.portfolioData;
   const [terminalInput, setTerminalInput] = useState("");
   const [displayError, setDisplayError] = useState(false);
@@ -199,7 +199,7 @@ export default function portfolio() {
             an installation-wizard-like feel to it. The bookings steps are built
             inside a carousel, which provides a very smooth UI. The application
             is connecting to our custom Python-built backend, and communicates
-            to our own software where our client's information is stored.
+            to our own software where our client&apos;s information is stored.
           </p>
           <p>
             Clients that have signed up for and are currently testing this

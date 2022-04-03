@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import React, { useRef, useState } from 'react'
 import styles from '../styles/Login.module.css'
 
-export default function login() {
+export default function Login() {
   const pwRef = useRef()
   const router = useRouter()
   const [loading, setLoading] = useState(false)

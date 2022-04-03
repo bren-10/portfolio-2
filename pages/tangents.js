@@ -4,7 +4,7 @@ import { useRouter } from 'next/dist/client/router'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import TangentCard from '../components/TangentCard'
 
-export default function tangents() {
+export default function Tangents() {
   const [terminalInput, setTerminalInput] = useState('')
   const [displayError, setDisplayError] = useState(false)
   const [tangents, setTangents] = useState(false)
@@ -123,8 +123,8 @@ export default function tangents() {
         {loading ? 
           <h3>Loading tangents...</h3>
           :
-          tangents && tangents.map(tangent => (
-            <TangentCard title={tangent.title} body={tangent.body} date={tangent.date}/>  
+          tangents && tangents.map((tangent, i) => (
+            <TangentCard key={i} title={tangent.title} body={tangent.body} date={tangent.date}/>  
           ))
         }
         {noTangents && 

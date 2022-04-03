@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/dist/client/router";
 
-export default function aboutMe() {
+export default function AboutMe() {
   const cvRef = useRef()
   const [terminalInput, setTerminalInput] = useState('')
   const [displayError, setDisplayError] = useState(false)
@@ -131,7 +131,7 @@ export default function aboutMe() {
           Diploma in Audio Engineering & Audio Technology in 2016.
         </p>
         <p>
-          After more than a year's searching for a job in audio engineering
+          After more than a year&apos;s searching for a job in audio engineering
           whilst working as a manager & sales executive for a music store, I
           finally got a job as an Audio Engineer at a dubbing firm in Cape Town.
         </p>
@@ -141,7 +141,7 @@ export default function aboutMe() {
         </p>
         <p>
           After a few months I realised that this is not what I wanted to do.
-          The job didn't involve much brain power, which in turn made me
+          The job didn&apos;t involve much brain power, which in turn made me
           miserable as I thrive on learning and problem solving daily.
         </p>
         <p>

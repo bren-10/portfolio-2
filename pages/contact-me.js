@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/dist/client/router'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
-export default function contactMe() {
+export default function ContactMe() {
   const mailRef = useRef()
   const telRef = useRef()
   const whatsappRef = useRef()
