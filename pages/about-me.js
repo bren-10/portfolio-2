@@ -163,7 +163,7 @@ export default function AboutMe() {
         </p>
         <p>I also know the basics of:</p>
         <p>
-          Angular<br></br>PHP<br></br>TypeScript<br></br>Flask<br></br>Web2Py
+          Angular<br></br>PHP<br></br>TypeScript<br></br>Flask<br></br>Web2Py<br></br>C#
         </p>
         <p>
           I also play guitar and drums, for what that&apos;s worth
