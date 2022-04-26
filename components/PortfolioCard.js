@@ -42,6 +42,7 @@ export default function PortfolioCard(props) {
         ))}
       <p className="mt-2">{props.description}</p>
       <a target="_blank" href={props.sourceCode} rel="noreferrer" className={styles.viewCode}>Source Code</a>
+      <a target="_blank" href={props.source} rel="noreferrer" className={styles.viewSite}>Visit</a>
     </div>
   );
 }

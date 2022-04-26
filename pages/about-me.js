@@ -4,19 +4,19 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/dist/client/router";
 
 export default function AboutMe() {
-  const cvRef = useRef()
-  const [terminalInput, setTerminalInput] = useState('')
-  const [displayError, setDisplayError] = useState(false)
-  const router = useRouter()
-  const inputRef = useRef()
-  
+  const cvRef = useRef();
+  const [terminalInput, setTerminalInput] = useState("");
+  const [displayError, setDisplayError] = useState(false);
+  const router = useRouter();
+  const inputRef = useRef();
+
   // Source: https://stackoverflow.com/questions/37440408/how-to-detect-esc-key-press-in-react-and-how-to-handle-it
   // With added functionality
   // Decided to go the route of window keystore detection instead of <input/> because of fancy blinker cursor not working well
   // with the input field.
   const keystrokeDetection = useCallback((event) => {
-    event.preventDefault()
-    const key = event.key
+    event.preventDefault();
+    const key = event.key;
     const ignoreList = [
       "Shift",
       "Control",
@@ -32,39 +32,39 @@ export default function AboutMe() {
       "ArrowRight",
       "ArrowUp",
       "ArrowDown",
-    ]
+    ];
 
     function handleInput() {
       if (!ignoreList.includes(key)) {
-        setTerminalInput(prev => prev.concat(key))
+        setTerminalInput((prev) => prev.concat(key));
       }
     }
 
     function handleSubmission() {
-      setDisplayError(false)
-      const input = inputRef.current.toLowerCase()
-      if (input === 'back') {
-        router.back()
-      } else if (input.includes('cv')) {
-        cvRef.current.click()
+      setDisplayError(false);
+      const input = inputRef.current.toLowerCase();
+      if (input === "back") {
+        router.back();
+      } else if (input.includes("cv")) {
+        cvRef.current.click();
       } else {
-        setDisplayError(true)
+        setDisplayError(true);
       }
     }
 
     // For the sake of speed-typers, I'd rather do switch/case
     switch (key) {
-      case 'Enter':
-        handleSubmission()
-        break
-      case 'Backspace':
-        setTerminalInput(prev => prev.slice(0, -1))
-        break
-      case 'Space':
-        setTerminalInput(prev => prev.concat(' '))
-        break
+      case "Enter":
+        handleSubmission();
+        break;
+      case "Backspace":
+        setTerminalInput((prev) => prev.slice(0, -1));
+        break;
+      case "Space":
+        setTerminalInput((prev) => prev.concat(" "));
+        break;
       default:
-        handleInput()
+        handleInput();
     }
   }, []);
 
@@ -77,11 +77,11 @@ export default function AboutMe() {
   }, []);
 
   useEffect(() => {
-    if (displayError && !terminalInput){
-      setDisplayError(false)
+    if (displayError && !terminalInput) {
+      setDisplayError(false);
     }
-    inputRef.current = terminalInput
-  }, [terminalInput])
+    inputRef.current = terminalInput;
+  }, [terminalInput]);
 
   return (
     <div className={styles.about}>
@@ -111,13 +111,14 @@ export default function AboutMe() {
             </span>
           </Link>
         </h3>
-        {displayError &&
+        {displayError && (
           <h3>
             &#62; <span className="error-msg">ERR: UNKNOWN COMMAND</span>
           </h3>
-        }
+        )}
         <h3>
-          &#62; {terminalInput}<span className="blinker">_</span>
+          &#62; {terminalInput}
+          <span className="blinker">_</span>
         </h3>
       </div>
 
@@ -153,17 +154,23 @@ export default function AboutMe() {
           Development), and I have been working as one since October 2020.
         </p>
         <p>
-          I&apos;ve learnt a substantial amount since I dove into coding in{/* NextJS refuses to build when using an apostrophe inside JSX? */}
+          I&apos;ve learnt a substantial amount since I dove into coding in
+          {/* NextJS refuses to build when using an apostrophe inside JSX? */}
           November 2019 and it will forever be my passion.
         </p>
-        <p>Some of my familiar languages & frameworks include:</p>
-        <p>
-          Python<br></br>Javascript<br></br>React<br></br>NextJS<br></br>
-          Django<br></br>ExpressJS
+        <p className="text-decoration-underline">
+          Some of my familiar languages & frameworks include:
         </p>
-        <p>I also know the basics of:</p>
         <p>
-          Angular<br></br>PHP<br></br>TypeScript<br></br>Flask<br></br>Web2Py<br></br>C#
+          &#62; Python<br></br>&#62; Javascript<br></br>&#62; React<br></br>
+          &#62; NextJS<br></br>
+          &#62; Django<br></br>&#62; ExpressJS
+        </p>
+        <p className="text-decoration-underline">I also know the basics of:</p>
+        <p>
+          &#62; Angular<br></br>&#62; PHP<br></br>&#62; TypeScript<br></br>&#62;
+          Flask<br></br>&#62; Web2Py
+          <br></br>&#62; C#<br></br>&#62; VueJS
         </p>
         <p>
           I also play guitar and drums, for what that&apos;s worth
