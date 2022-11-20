@@ -7,8 +7,17 @@ export default function AboutMe() {
   const cvRef = useRef();
   const [terminalInput, setTerminalInput] = useState("");
   const [displayError, setDisplayError] = useState(false);
+  const [currentAge, setCurrentAge] = useState(false);
   const router = useRouter();
   const inputRef = useRef();
+
+  function getCurrentAge() {
+    const birthDay = new Date('29 August 1993');
+
+    const ageDifMs = Date.now() - birthDay;
+    const ageDate = new Date(ageDifMs); // miliseconds from epoch
+    return Math.abs(ageDate.getUTCFullYear() - 1970);
+  }
 
   // Source: https://stackoverflow.com/questions/37440408/how-to-detect-esc-key-press-in-react-and-how-to-handle-it
   // With added functionality
@@ -83,6 +92,11 @@ export default function AboutMe() {
     inputRef.current = terminalInput;
   }, [terminalInput]);
 
+  useEffect(() => {
+    const age = getCurrentAge();
+    setCurrentAge(age)
+  }, [])
+
   return (
     <div className={styles.about}>
       <h3>&#62; ABOUT ME</h3>
@@ -125,7 +139,7 @@ export default function AboutMe() {
       <div className={styles.aboutMeContainer}>
         <p>
           Born in Cape Town, South Africa. Matriculated in 2011 at Durbanville
-          High. Currently 28 years old.
+          High. Currently {currentAge} years old.
         </p>
         <p>
           I studied Audio Engineering for 5 years at 2 colleges and obtained my
@@ -155,7 +169,6 @@ export default function AboutMe() {
         </p>
         <p>
           I&apos;ve learnt a substantial amount since I dove into coding in
-          {/* NextJS refuses to build when using an apostrophe inside JSX? */}
           November 2019 and it will forever be my passion.
         </p>
         <p className="text-decoration-underline">
